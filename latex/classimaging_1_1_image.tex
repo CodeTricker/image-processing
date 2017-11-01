@@ -1,0 +1,257 @@
+\hypertarget{classimaging_1_1_image}{}\section{imaging\+:\+:Image Class Reference}
+\label{classimaging_1_1_image}\index{imaging\+::\+Image@{imaging\+::\+Image}}
+
+
+$<$ \hyperlink{classimaging_1_1_image}{Image} is child class of templated class Array and \hyperlink{class_serializable}{Serializable}  
+
+
+
+
+{\ttfamily \#include $<$Image.\+h$>$}
+
+Inheritance diagram for imaging\+:\+:Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classimaging_1_1_image}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classimaging_1_1_image_a477c2fbe962468df24ce83b11a54e79a}\label{classimaging_1_1_image_a477c2fbe962468df24ce83b11a54e79a}} 
+enum {\bfseries channel\+\_\+t} \{ {\bfseries R\+ED} = 0, 
+{\bfseries G\+R\+E\+EN}, 
+{\bfseries B\+L\+UE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmath_1_1_vec3}{Color} \hyperlink{classimaging_1_1_image_acb9fc398bbd5224553cccd7458f73279}{get\+Pixel} (unsigned int x, unsigned int y) const
+\begin{DoxyCompactList}\small\item\em You can use the names R\+ED, G\+R\+E\+EN, B\+L\+UE instead of 0,1,2 to access individual Color channels. \end{DoxyCompactList}\item 
+void \hyperlink{classimaging_1_1_image_af46eb162fc02880e06d5029cb4c9b540}{set\+Pixel} (unsigned int x, unsigned int y, \hyperlink{classmath_1_1_vec3}{Color} \&value)
+\item 
+void \hyperlink{classimaging_1_1_image_a5f586aaf4180937982608c9d48f0ae67}{set\+Data} (const \hyperlink{classmath_1_1_vec3}{Color} $\ast$\&data\+\_\+ptr)
+\item 
+\hyperlink{classimaging_1_1_image_abd5fddfa49e3430c610cef4ed34ce099}{Image} ()
+\item 
+\hyperlink{classimaging_1_1_image_aefa58d670974137c9409fa26b6c2c12e}{Image} (unsigned int \hyperlink{classmath_1_1_array_aac107e42abccdfb484b0544e6a860c10}{width}, unsigned int \hyperlink{classmath_1_1_array_a80b79625a8f11cbc63843376b591360c}{height})
+\item 
+\hyperlink{classimaging_1_1_image_a029a91e59afb23b851cbdc43da68d0dd}{Image} (unsigned int \hyperlink{classmath_1_1_array_aac107e42abccdfb484b0544e6a860c10}{width}, unsigned int \hyperlink{classmath_1_1_array_a80b79625a8f11cbc63843376b591360c}{height}, const \hyperlink{classmath_1_1_vec3}{Color} $\ast$data\+\_\+ptr)
+\item 
+\hyperlink{classimaging_1_1_image_abc4a034190e1217c8e84d217611d1c97}{Image} (const \hyperlink{classimaging_1_1_image}{Image} \&src)
+\item 
+\hyperlink{classimaging_1_1_image_a4d646bedf388ac5d13b53e3a190ca949}{$\sim$\+Image} ()
+\item 
+\hyperlink{classimaging_1_1_image}{Image} \& \hyperlink{classimaging_1_1_image_a58df2b10b12f72089effb8fa945d174c}{operator=} (const \hyperlink{classimaging_1_1_image}{Image} \&right)
+\item 
+virtual bool \hyperlink{classimaging_1_1_image_ac9ad6b7cf9eabf0c99decc03dac24694}{operator$<$$<$} (std\+::string filename)
+\item 
+virtual bool \hyperlink{classimaging_1_1_image_aeaf5fcad3d1b49a0f127e0d88dfce5e3}{operator$>$$>$} (std\+::string filename)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+$<$ \hyperlink{classimaging_1_1_image}{Image} is child class of templated class Array and \hyperlink{class_serializable}{Serializable} 
+
+It is the class that represents a generic data container for an image.
+
+It holds the actual buffer of the pixel values and provides methods for accessing them, either as individual pixels or as a memory block. The \hyperlink{classimaging_1_1_image}{Image} class alone does not provide any functionality for loading and storing an image, as it is the result or input to such a procedure.
+
+The internal buffer of an image object stores the actual bytes (data) of the color image as a contiguous sequence of R\+GB triplets. Hence, the size of the buffer variable holding these data is 3 X width X height X sizeof(component\+\_\+t) bytes.
+
+All values stored in the internal memory buffer are floating point values and for typical (normalized) intensity ranges, each color component is within the range \mbox{[}0.\+0, 1.\+0\mbox{]}.
+
+\begin{DoxySeeAlso}{See also}
+component\+\_\+t 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimaging_1_1_image_abd5fddfa49e3430c610cef4ed34ce099}\label{classimaging_1_1_image_abd5fddfa49e3430c610cef4ed34ce099}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!Image@{Image}}
+\index{Image@{Image}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily imaging\+::\+Image\+::\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor.
+
+By default, the dimensions of the image should be zero and the buffer must be set to nullptr. \mbox{\Hypertarget{classimaging_1_1_image_aefa58d670974137c9409fa26b6c2c12e}\label{classimaging_1_1_image_aefa58d670974137c9409fa26b6c2c12e}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!Image@{Image}}
+\index{Image@{Image}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily imaging\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+Constructor with width and height specification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & is the desired width of the new image. \\
+\hline
+{\em height} & is the desired height of the new image. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classimaging_1_1_image_a029a91e59afb23b851cbdc43da68d0dd}\label{classimaging_1_1_image_a029a91e59afb23b851cbdc43da68d0dd}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!Image@{Image}}
+\index{Image@{Image}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily imaging\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height,  }\item[{const \hyperlink{classmath_1_1_vec3}{Color} $\ast$}]{data\+\_\+ptr }\end{DoxyParamCaption})}
+
+Constructor with data initialization.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & is the desired width of the new image. \\
+\hline
+{\em height} & is the desired height of the new image. \\
+\hline
+{\em data\+\_\+ptr} & is the source of the data to copy to the internal image buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classimaging_1_1_image_a5f586aaf4180937982608c9d48f0ae67}{set\+Data} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classimaging_1_1_image_abc4a034190e1217c8e84d217611d1c97}\label{classimaging_1_1_image_abc4a034190e1217c8e84d217611d1c97}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!Image@{Image}}
+\index{Image@{Image}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily imaging\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{const \hyperlink{classimaging_1_1_image}{Image} \&}]{src }\end{DoxyParamCaption})}
+
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & is the source image to replicate in this object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classimaging_1_1_image_a4d646bedf388ac5d13b53e3a190ca949}\label{classimaging_1_1_image_a4d646bedf388ac5d13b53e3a190ca949}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!````~Image@{$\sim$\+Image}}
+\index{````~Image@{$\sim$\+Image}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{$\sim$\+Image()}{~Image()}}
+{\footnotesize\ttfamily imaging\+::\+Image\+::$\sim$\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The \hyperlink{classimaging_1_1_image}{Image} destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimaging_1_1_image_acb9fc398bbd5224553cccd7458f73279}\label{classimaging_1_1_image_acb9fc398bbd5224553cccd7458f73279}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!get\+Pixel@{get\+Pixel}}
+\index{get\+Pixel@{get\+Pixel}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{get\+Pixel()}{getPixel()}}
+{\footnotesize\ttfamily \hyperlink{classmath_1_1_vec3}{Color} imaging\+::\+Image\+::get\+Pixel (\begin{DoxyParamCaption}\item[{unsigned int}]{x,  }\item[{unsigned int}]{y }\end{DoxyParamCaption}) const}
+
+
+
+You can use the names R\+ED, G\+R\+E\+EN, B\+L\+UE instead of 0,1,2 to access individual Color channels. 
+
+Obtains the color of the image at location (x,y).
+
+The method should do any necessary bounds checking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the (zero-\/based) horizontal index of the pixel to get. \\
+\hline
+{\em y} & is the (zero-\/based) vertical index of the pixel to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color of the (x,y) pixel as a Color object. Returns a black (0,0,0) color in case of an out-\/of-\/bounds x,y pair. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classimaging_1_1_image_ac9ad6b7cf9eabf0c99decc03dac24694}\label{classimaging_1_1_image_ac9ad6b7cf9eabf0c99decc03dac24694}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily bool imaging\+::\+Image\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads the contents of an object from the specified file.
+
+The operator can be used for the implementation of \char`\"{}de-\/serialization\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to use for loading the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_serializable_a5a8ec3fd8411693715ac76b1a10386ba}{Serializable}.
+
+\mbox{\Hypertarget{classimaging_1_1_image_a58df2b10b12f72089effb8fa945d174c}\label{classimaging_1_1_image_a58df2b10b12f72089effb8fa945d174c}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!operator=@{operator=}}
+\index{operator=@{operator=}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classimaging_1_1_image}{Image} \& imaging\+::\+Image\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classimaging_1_1_image}{Image} \&}]{right }\end{DoxyParamCaption})}
+
+Copy assignment operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & is the source image. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classimaging_1_1_image_aeaf5fcad3d1b49a0f127e0d88dfce5e3}\label{classimaging_1_1_image_aeaf5fcad3d1b49a0f127e0d88dfce5e3}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily bool imaging\+::\+Image\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes the contents of an object to the specified file.
+
+The operator can be used for the implementation of \char`\"{}serialization\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to use for saving the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the operation was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_serializable_a60c53d8ec7e38531699d1ca19642318d}{Serializable}.
+
+\mbox{\Hypertarget{classimaging_1_1_image_a5f586aaf4180937982608c9d48f0ae67}\label{classimaging_1_1_image_a5f586aaf4180937982608c9d48f0ae67}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily void imaging\+::\+Image\+::set\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{classmath_1_1_vec3}{Color} $\ast$\&}]{data\+\_\+ptr }\end{DoxyParamCaption})}
+
+Copies the image data from an external raw buffer to the internal image buffer.
+
+The member function A\+S\+S\+U\+M\+ES that the input buffer is of a size compatible with the internal storage of the \hyperlink{classimaging_1_1_image}{Image} object and that the data buffer has been alreeady allocated. If the image buffer is not allocated or the width or height of the image are 0, the method should exit immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+ptr} & is the reference to the preallocated buffer from where to copy the data to the \hyperlink{classimaging_1_1_image}{Image} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classimaging_1_1_image_af46eb162fc02880e06d5029cb4c9b540}\label{classimaging_1_1_image_af46eb162fc02880e06d5029cb4c9b540}} 
+\index{imaging\+::\+Image@{imaging\+::\+Image}!set\+Pixel@{set\+Pixel}}
+\index{set\+Pixel@{set\+Pixel}!imaging\+::\+Image@{imaging\+::\+Image}}
+\subsubsection{\texorpdfstring{set\+Pixel()}{setPixel()}}
+{\footnotesize\ttfamily void imaging\+::\+Image\+::set\+Pixel (\begin{DoxyParamCaption}\item[{unsigned int}]{x,  }\item[{unsigned int}]{y,  }\item[{\hyperlink{classmath_1_1_vec3}{Color} \&}]{value }\end{DoxyParamCaption})}
+
+Sets the R\+GB values for an (x,y) pixel.
+
+The method should perform any necessary bounds checking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is the (zero-\/based) horizontal index of the pixel to set. \\
+\hline
+{\em y} & is the (zero-\/based) vertical index of the pixel to set. \\
+\hline
+{\em value} & is the new color for the (x,y) pixel. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Image.\+h\item 
+Image.\+cpp\end{DoxyCompactItemize}

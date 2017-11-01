@@ -1,0 +1,54 @@
+\hypertarget{classimaging_1_1_color_filter}{}\section{imaging\+:\+:Color\+Filter Class Reference}
+\label{classimaging_1_1_color_filter}\index{imaging\+::\+Color\+Filter@{imaging\+::\+Color\+Filter}}
+Inheritance diagram for imaging\+:\+:Color\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classimaging_1_1_color_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classimaging_1_1_color_filter_ad1bb2cc1d2a357166ae3261d542c59d7}\label{classimaging_1_1_color_filter_ad1bb2cc1d2a357166ae3261d542c59d7}} 
+{\bfseries Color\+Filter} (const \hyperlink{classmath_1_1_vec3}{Color} c)
+\item 
+\mbox{\Hypertarget{classimaging_1_1_color_filter_a9ad91d22ab9cafbfeb767dfef787c7d1}\label{classimaging_1_1_color_filter_a9ad91d22ab9cafbfeb767dfef787c7d1}} 
+\hyperlink{classmath_1_1_vec3}{Color} {\bfseries get\+Color} ()
+\item 
+virtual \hyperlink{classimaging_1_1_image}{Image} $\ast$ \hyperlink{classimaging_1_1_color_filter_a38b3f549e53f0d25b56a388350213782}{apply} (\hyperlink{classimaging_1_1_image}{Image} \&src)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classimaging_1_1_color_filter_a05eee96debffe494d298243812aaf9ee}\label{classimaging_1_1_color_filter_a05eee96debffe494d298243812aaf9ee}} 
+const \hyperlink{classmath_1_1_vec3}{Color} {\bfseries color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimaging_1_1_color_filter_a38b3f549e53f0d25b56a388350213782}\label{classimaging_1_1_color_filter_a38b3f549e53f0d25b56a388350213782}} 
+\index{imaging\+::\+Color\+Filter@{imaging\+::\+Color\+Filter}!apply@{apply}}
+\index{apply@{apply}!imaging\+::\+Color\+Filter@{imaging\+::\+Color\+Filter}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \hyperlink{classimaging_1_1_image}{Image} $\ast$ imaging\+::\+Color\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\hyperlink{classimaging_1_1_image}{Image} \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Applies the filter to the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & is the source image to apply the filter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a new \hyperlink{classimaging_1_1_image}{Image} object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classimaging_1_1_filter_ab153f2e4e89dd744806299a29da8289b}{imaging\+::\+Filter}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Color\+Filter.\+h\item 
+Color\+Filter.\+cpp\end{DoxyCompactItemize}

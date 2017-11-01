@@ -1,0 +1,85 @@
+\hypertarget{classimaging_1_1_filter}{}\section{imaging\+:\+:Filter Class Reference}
+\label{classimaging_1_1_filter}\index{imaging\+::\+Filter@{imaging\+::\+Filter}}
+
+
+{\ttfamily \#include $<$Filter.\+h$>$}
+
+Inheritance diagram for imaging\+:\+:Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.736434cm]{classimaging_1_1_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimaging_1_1_filter_a7ed3a34cf602ecd25b9671536a31f9b2}{Filter} (string filter\+\_\+name)
+\item 
+const string \hyperlink{classimaging_1_1_filter_a42614ff975ea370d98446ef34fb76538}{get\+Name} ()
+\item 
+virtual \hyperlink{classimaging_1_1_image}{Image} $\ast$ \hyperlink{classimaging_1_1_filter_ab153f2e4e89dd744806299a29da8289b}{apply} (\hyperlink{classimaging_1_1_image}{Image} \&src)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classimaging_1_1_filter_ad1c2254a57ea165175b343447b7bbb64}\label{classimaging_1_1_filter_ad1c2254a57ea165175b343447b7bbb64}} 
+const string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class \hyperlink{classimaging_1_1_filter}{Filter} is the common core for specialized filters. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classimaging_1_1_filter_a7ed3a34cf602ecd25b9671536a31f9b2}\label{classimaging_1_1_filter_a7ed3a34cf602ecd25b9671536a31f9b2}} 
+\index{imaging\+::\+Filter@{imaging\+::\+Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!imaging\+::\+Filter@{imaging\+::\+Filter}}
+\subsubsection{\texorpdfstring{Filter()}{Filter()}}
+{\footnotesize\ttfamily imaging\+::\+Filter\+::\+Filter (\begin{DoxyParamCaption}\item[{string}]{filter\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor with the name of the filter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter\+\_\+name} & is the desired name of the filter. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classimaging_1_1_filter_ab153f2e4e89dd744806299a29da8289b}\label{classimaging_1_1_filter_ab153f2e4e89dd744806299a29da8289b}} 
+\index{imaging\+::\+Filter@{imaging\+::\+Filter}!apply@{apply}}
+\index{apply@{apply}!imaging\+::\+Filter@{imaging\+::\+Filter}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily virtual \hyperlink{classimaging_1_1_image}{Image}$\ast$ imaging\+::\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\hyperlink{classimaging_1_1_image}{Image} \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Applies the filter to the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & is the source image to apply the filter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a new \hyperlink{classimaging_1_1_image}{Image} object. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classimaging_1_1_color_filter_a38b3f549e53f0d25b56a388350213782}{imaging\+::\+Color\+Filter}, \hyperlink{classimaging_1_1_median_a9b6e9ac628f71aaad3e7b668832e5a10}{imaging\+::\+Median}, \hyperlink{classimaging_1_1_blur_a3b4898453abe24e7f0be3fbd2cba829c}{imaging\+::\+Blur}, \hyperlink{classimaging_1_1_diff_af0562801611f5d33d4319bdab15d29a4}{imaging\+::\+Diff}, and \hyperlink{classimaging_1_1_gray_a12fb554726775cf110acfa73c468caee}{imaging\+::\+Gray}.
+
+\mbox{\Hypertarget{classimaging_1_1_filter_a42614ff975ea370d98446ef34fb76538}\label{classimaging_1_1_filter_a42614ff975ea370d98446ef34fb76538}} 
+\index{imaging\+::\+Filter@{imaging\+::\+Filter}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!imaging\+::\+Filter@{imaging\+::\+Filter}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily const string imaging\+::\+Filter\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reports the name of the filter
+
+\begin{DoxyReturn}{Returns}
+the name 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Filter.\+h\end{DoxyCompactItemize}
